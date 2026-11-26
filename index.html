@@ -3,44 +3,203 @@
 <meta name="description" content="Portofolio Desain Komunikasi Visual & Fotografi oleh Fajar.">
 <meta property="og:title" content="Fajar • Portofolio DKV"><meta property="og:description" content="Koleksi desain grafis, poster, branding, dan fotografi.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23a3e635'/><text x='16' y='21' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='14'>FD</text></svg>">
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
 <style>
-:root{--b:#09090b;--c:#141417;--l:#27272a;--t:#fafafa;--s:#a1a1aa;--a:#a3e635;--at:#09090b;--g:#a3e63533}
-[data-t=p]{--b:#f4f1ea;--c:#fff;--l:#d6d3cb;--t:#18181b;--s:#52525b;--a:#ea580c;--at:#fff;--g:#ea580c29}
+:root{--b:#09090b;--c:#141417;--l:#27272a;--t:#fafafa;--s:#a1a1aa;--a:#a3e635;--at:#09090b;--g:#a3e63533;--d:#4d7c0f}
+[data-t=p]{--b:#f4f1ea;--c:#fff;--l:#d6d3cb;--t:#18181b;--s:#52525b;--a:#ea580c;--at:#fff;--g:#ea580c29;--d:#9a3412}
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
 body,.pc{display:grid;place-items:center}
-body{background:var(--b);color:var(--t);padding:20px 14px;min-height:100vh;transition:background .3s,color .3s}
-.g,.lk{display:grid;grid-template-columns:1fr 1fr;gap:12px}.g{width:100%;max-width:480px}.lk{gap:8px}
-.x,.bd,.tb,.tg span,.kr,.bt{border:1px solid var(--l);transition:.2s;background:var(--b);color:var(--t)}
-.x{background:var(--c);border-radius:20px;padding:18px;animation:up .5s ease both}
-.x:nth-child(2),.x:nth-child(3){animation-delay:.08s}.x:nth-child(4),.x:nth-child(5){animation-delay:.16s}.x:nth-child(6),.x:nth-child(7){animation-delay:.24s}
+body{background:var(--b);color:var(--t);padding:20px 14px;min-height:100vh;transition:background .3s,color .3s;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+#wl{position:fixed;inset:0;z-index:99;background:var(--b);perspective:800px;display:grid;place-content:center;text-align:center;gap:6px;transition:opacity .45s ease,transform .5s cubic-bezier(.76,0,.24,1)}
+#wl span{font-size:.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--s);font-weight:700}
+#wl strong{font-size:clamp(2.1rem,7vw,3.3rem);font-weight:800;letter-spacing:-1px;color:var(--t);line-height:1.1;transform-style:preserve-3d}
+#wl i{font-style:normal;color:var(--a)}
+#wl.hd{opacity:0;transform:translateY(-14px) scale(.98);pointer-events:none}
+#sn{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+#cr{display:none}
+.g,.lk{display:grid;grid-template-columns:1fr 1fr;gap:12px}.g{position:relative;z-index:1;width:100%;max-width:480px;perspective:1100px;transform-style:preserve-3d}.lk{gap:8px;transform-style:preserve-3d}
+.bd,.tb,.tg span,.kr,.bt{border:1px solid var(--l);transition:.2s;background:var(--b);color:var(--t)}
+.x{position:relative;background:transparent;border:none;padding:18px;transform-style:preserve-3d;will-change:transform}
+.x>*{transition:opacity .3s ease}
+.x::before,.x::after{content:"";position:absolute;left:18px;border-radius:10px;background:linear-gradient(90deg,var(--c) 25%,var(--l) 50%,var(--c) 75%);background-size:200% 100%;animation:sh 1.1s infinite linear;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.x::before{top:18px;width:36%;height:12px}
+.x::after{top:38px;right:18px;bottom:18px}
+body.ld .x>*{opacity:0;pointer-events:none}
+body.ld .x::before,body.ld .x::after{opacity:1}
 .c2,.c4{grid-column:span 2}
-.top,.hr,.bd,.kr{display:flex;align-items:center}.top,.kr,.hb{justify-content:space-between}.top{margin-bottom:14px}.hr{gap:14px}
-.bd,.tb{border-radius:99px;font-size:.74rem;padding:5px 10px;cursor:pointer}.bd{gap:6px;font-weight:600;color:var(--a);border-color:var(--a)}
+.top,.hr,.bd,.kr{display:flex;align-items:center}.top,.kr,.hb{justify-content:space-between}.top{margin-bottom:14px;transform-style:preserve-3d}.hr{gap:14px;transform-style:preserve-3d}
+.bd,.tb{border-radius:99px;font-size:.74rem;padding:5px 10px;cursor:pointer}.bd{gap:6px;font-weight:600;color:var(--a);border-color:var(--a);transform:translateZ(10px)}
 .bd i{width:7px;height:7px;border-radius:50%;background:var(--a);animation:bk 1.5s infinite}
-.pc{width:62px;height:62px;border-radius:16px;background:var(--a);color:var(--at);font-weight:800;font-size:1.35rem;flex:none;animation:fl 3s infinite}
-h1{font-size:clamp(1.25rem,2.5vw,1.5rem)}small,.bi,b,footer{color:var(--s)}small{display:block;font-size:.8rem;margin-top:2px}.bi{font-size:.85rem;margin-top:12px;line-height:1.55}
-b{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}h2{font-size:clamp(1.05rem,2vw,1.2rem);font-weight:800;color:var(--a);line-height:1.25}
-.tg{display:flex;flex-wrap:wrap;gap:6px}.tg span{font-size:.76rem;padding:5px 10px;border-radius:8px}
-.kr{position:relative;overflow:hidden;border-color:var(--a);border-radius:14px;padding:14px 16px;text-decoration:none;box-shadow:0 0 16px var(--g)}
+.pc{width:62px;height:62px;border-radius:16px;background:var(--a);color:var(--at);font-weight:800;font-size:1.35rem;flex:none;transform-style:preserve-3d;box-shadow:0 4px 0 var(--d),0 12px 24px var(--g);animation:fl 3.2s ease-in-out infinite}
+h1{font-size:clamp(1.25rem,2.5vw,1.5rem);transform:translateZ(12px)}small,.bi,b,footer{color:var(--s)}small{display:block;font-size:.8rem;margin-top:2px}.bi{font-size:.85rem;margin-top:12px;line-height:1.55;transform:translateZ(6px)}
+b{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;transform:translateZ(6px)}h2{font-size:clamp(1.05rem,2vw,1.2rem);font-weight:800;color:var(--a);line-height:1.25;transform:translateZ(14px)}
+.tg{display:flex;flex-wrap:wrap;gap:6px;transform-style:preserve-3d}.tg span{font-size:.76rem;padding:5px 10px;border-radius:8px;transform:translateZ(10px)}
+.mq{grid-column:1/-1;overflow:hidden;padding:11px 0;margin:2px 0;border-block:1px solid var(--l);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mt{display:flex;width:max-content;will-change:transform;animation:mq 18s linear infinite}
+.mt span{font-size:clamp(.76rem,2vw,.9rem);font-weight:800;letter-spacing:3.2px;color:var(--s);white-space:nowrap}
+.mt i{font-style:normal;color:var(--a)}
+.kr{position:relative;overflow:hidden;border-color:var(--a);border-radius:14px;padding:14px 16px;text-decoration:none;transform:translateZ(14px);box-shadow:0 6px 20px var(--g)}
 .kr::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--g),transparent);transform:translateX(-100%);animation:sw 3s infinite}
 .kr h3,em{color:var(--a);font-style:normal}.kr h3{font-size:1rem}em{font-size:1.25rem;font-weight:700;padding-left:10px;animation:ar 1.5s infinite}
-.bt{text-align:center;padding:10px;border-radius:12px;font-size:.83rem;font-weight:600;text-decoration:none;cursor:pointer}.m{background:var(--a);color:var(--at);border-color:var(--a)}
-.tb:active,.kr:active,.bt:active{transform:scale(.95)}footer{grid-column:1/-1;text-align:center;font-size:.73rem;padding-top:4px}
-@keyframes up{0%{opacity:0;transform:translateY(14px)}}@keyframes bk{50%{opacity:.3}}@keyframes fl{50%{transform:translateY(-4px)}}@keyframes ar{50%{transform:translate(3px,-3px)}}@keyframes sw{50%,100%{transform:translateX(100%)}}
+.tb,.bt{position:relative;overflow:hidden;transform:translateZ(10px);transition:transform .28s cubic-bezier(.34,1.56,.64,1),border-color .25s,box-shadow .25s,background .25s,color .25s}
+.tb::after,.bt::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.32) 50%,transparent 75%);transform:translateX(-120%);transition:transform .55s ease;pointer-events:none}
+.bt{text-align:center;padding:10px;border-radius:12px;font-size:.83rem;font-weight:600;text-decoration:none;cursor:pointer}.m{background:var(--a);color:var(--at);border-color:var(--a);animation:gp 2.8s infinite}
+.tb:active,.kr:active,.bt:active{transform:translateZ(2px) scale(.94);box-shadow:0 0 14px var(--g)}
+.tb:active::after,.bt:active::after{transform:translateX(120%);transition:0s}
+footer{grid-column:1/-1;text-align:center;font-size:.73rem;padding-top:4px}
+@keyframes sh{0%{background-position:200% 0}100%{background-position:-200% 0}}@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}@keyframes bk{50%{opacity:.3}}@keyframes fl{0%,100%{transform:translateZ(18px) translateY(0) rotateX(0) rotateY(0)}50%{transform:translateZ(24px) translateY(-4px) rotateX(8deg) rotateY(-8deg)}}@keyframes ar{50%{transform:translate(3px,-3px)}}@keyframes sw{50%,100%{transform:translateX(100%)}}@keyframes gp{0%,100%{box-shadow:0 4px 12px 0 var(--g)}50%{box-shadow:0 8px 20px 2px var(--g)}}
 @media(max-width:350px){.g,.lk{grid-template-columns:1fr}.c2,.c4{grid-column:span 1}}
 @media(min-width:720px){.g{max-width:880px;grid-template-columns:repeat(4,1fr)}.hb{display:flex;flex-direction:column;grid-row:span 2}.c4{grid-column:span 4}.lk{grid-template-columns:repeat(4,1fr)}}
-@media(hover:hover){.x:hover,.kr:hover,.bt:hover{border-color:var(--a);transform:translateY(-2px)}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style></head><body><main class="g">
-<div class="x c2 hb"><div><div class="top"><span class="bd"><i></i>Aktif Berkarya</span><button class="tb" onclick="tm()">Ganti Tema ◐</button></div><div class="hr"><div class="pc">FD</div><div><h1>Fajar</h1><small>Desainer Komunikasi Visual • Fotografer</small></div></div></div><p class="bi">Menerjemahkan ide dan pesan menjadi karya visual yang komunikatif lewat desain grafis dan fotografi. Ruang portofolio DKV yang saya rancang sendiri.</p></div>
-<div class="x"><b>Fokus Utama</b><h2>Designer & Fotografi</h2><small>Komunikasi visual & foto</small></div>
-<div class="x"><b>Domisili</b><h2>Indonesia</h2><small>Siap kolaborasi</small></div>
-<div class="x c2"><b>Keahlian & Minat</b><div class="tg"><span>Desain Grafis</span><span>Fotografi</span><span>Tipografi & Layout</span><span>Branding Visual</span><span>Konten Kreatif</span></div></div>
-<div class="x c2"><b>Software & Tools</b><div class="tg"><span>Photoshop</span><span>Lightroom</span></div></div>
-<div class="x c2"><b>Portofolio</b><a href="https://www.instagram.com/fajar_design1?lqvp=MWdhOXFncndjMWNuMg==" target="_blank" rel="noopener" class="kr"><div><h3>Hasil Karya</h3><small>Lihat koleksi desain poster & fotografi di Instagram</small></div><em>↗</em></a></div>
-<div class="x c4"><b>Kontak & Sosial</b><div class="lk"><a href="https://wa.me/6281234567890?text=Halo%20Fajar,%20saya%20tertarik%20kolaborasi%20desain" target="_blank" rel="noopener" class="bt m">WhatsApp</a><button class="bt" id="mb" onclick="cp()">Salin Email</button><a href="https://www.instagram.com/fajar_design1?bqrl=MWdhOXFncndjMWNuMg==" target="_blank" rel="noopener" class="bt">Instagram</a><a href="https://tiktok.com/@username" target="_blank" rel="noopener" class="bt">TikTok</a></div></div>
+@media(hover:hover){.kr:hover,.bt:hover,.tb:hover{border-color:var(--a);transform:translateZ(18px) translateY(-2px);box-shadow:0 10px 24px var(--g)}.tb:hover::after,.bt:hover::after{transform:translateX(120%)}}
+@media(hover:hover)and(pointer:fine){
+  body,a,button,.bd,.kr,.bt,.tb{cursor:none!important}
+  #cr{display:block;position:fixed;top:0;left:0;width:54px;height:54px;border-radius:50%;border:2px solid var(--a);pointer-events:none;z-index:9999;opacity:0;will-change:transform;transition:opacity .25s ease,background .25s ease,box-shadow .25s ease}
+  #cr::after{content:"";position:absolute;inset:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:var(--a);transition:transform .25s ease,opacity .25s ease}
+  #cr.hv{background:var(--g);box-shadow:0 0 20px var(--g)}
+  #cr.hv::after{transform:scale(0);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}#sn,#wl,#cr{display:none!important}}
+</style></head><body class="ld"><canvas id="sn"></canvas><div id="wl" aria-hidden="true"><span>FD • PORTOFOLIO DKV</span><strong>Welcome<i>.</i></strong></div><div id="cr" aria-hidden="true"></div><main class="g">
+<div class="x c2 hb" data-sp="-10"><div><div class="top"><span class="bd"><i></i>Open for Commission</span><button class="tb" onclick="tm()">Ganti Tema ◐</button></div><div class="hr"><div class="pc">FD</div><div><h1>Fajar</h1><small>Desainer Komunikasi Visual • Fotografer</small></div></div></div><p class="bi">Menerjemahkan ide dan pesan menjadi karya visual yang komunikatif lewat desain grafis dan fotografi. Ruang portofolio DKV yang saya rancang sendiri.</p></div>
+<div class="x" data-sp="14"><b>Fokus Utama</b><h2>Designer & Fotografi</h2><small>Komunikasi visual & foto</small></div>
+<div class="x" data-sp="-14"><b>Domisili</b><h2>Indonesia</h2><small>Siap kolaborasi</small></div>
+<div class="x c2" data-sp="10"><b>Keahlian & Minat</b><div class="tg"><span>Desain Grafis</span><span>Fotografi</span><span>Tipografi & Layout</span><span>Branding Visual</span><span>Konten Kreatif</span></div></div>
+<div class="x c2" data-sp="-12"><b>Software & Tools</b><div class="tg"><span>Photoshop</span><span>Lightroom</span></div></div>
+<div class="mq" aria-hidden="true"><div class="mt"><span>DESIGN • <i>DEVELOP</i> • CREATE • <i>INNOVATE</i> • VISUAL • <i>PHOTOGRAPHY</i> •&nbsp;</span><span>DESIGN • <i>DEVELOP</i> • CREATE • <i>INNOVATE</i> • VISUAL • <i>PHOTOGRAPHY</i> •&nbsp;</span></div></div>
+<div class="x c2" data-sp="12"><b>Portofolio</b><a href="https://www.instagram.com/fajar_design1?lqvp=MWdhOXFncndjMWNuMg==" target="_blank" rel="noopener" class="kr"><div><h3>Hasil Karya</h3><small>Lihat koleksi desain poster & fotografi di Instagram</small></div><em>↗</em></a></div>
+<div class="x c4" data-sp="-8"><b>Kontak & Sosial</b><div class="lk"><a href="https://wa.me/6281234567890?text=Halo%20Fajar,%20saya%20tertarik%20kolaborasi%20desain" target="_blank" rel="noopener" class="bt m">WhatsApp</a><button class="bt" id="mb" onclick="cp()">Salin Email</button><a href="https://www.instagram.com/fajar_design1?bqrl=MWdhOXFncndjMWNuMg==" target="_blank" rel="noopener" class="bt">Instagram</a><a href="https://tiktok.com/@username" target="_blank" rel="noopener" class="bt">TikTok</a></div></div>
 <footer>Dirancang & dikodekan sendiri • 2026</footer>
 </main><script>
-function tm(){document.body.dataset.t=document.body.dataset.t?"":"p"}
-function cp(){let e=document.createElement("textarea");e.value="email@gmail.com";document.body.append(e);e.select();document.execCommand("copy");e.remove();mb.textContent="Tersalin!";setTimeout(()=>mb.textContent="Salin Email",2e3)}
+const mq=matchMedia("(prefers-reduced-motion:reduce)");
+let ok=0,px=0,py=0,sy=0;
+function tm(){
+  document.body.dataset.t=document.body.dataset.t?"":"p";
+  if(window.gsap&&!mq.matches)gsap.fromTo(".pc",{scale:.85,rotateY:-180},{scale:1,rotateY:0,duration:.6,ease:"back.out(1.8)",clearProps:"transform"});
+}
+function cp(){
+  const v="email@gmail.com",dn=()=>{mb.textContent="Tersalin!";setTimeout(()=>mb.textContent="Salin Email",2e3)};
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(v).then(dn).catch(fb)}else{fb()}
+  function fb(){ok=1;let e=document.createElement("textarea");e.value=v;e.style.cssText="position:fixed;opacity:0";document.body.append(e);e.select();document.execCommand("copy");e.remove();ok=0;dn()}
+}
+["contextmenu","dragstart"].forEach(v=>document.addEventListener(v,e=>e.preventDefault()));
+["selectstart","copy"].forEach(v=>document.addEventListener(v,e=>{if(!ok)e.preventDefault()}));
+document.addEventListener("keydown",e=>{let k=e.key.toLowerCase();if(((e.ctrlKey||e.metaKey)&&["c","u","s","a","p"].includes(k))||e.key==="F12"||((e.ctrlKey||e.metaKey)&&e.shiftKey&&["i","j","c"].includes(k)))e.preventDefault()});
+addEventListener("pointermove",e=>{px=(e.clientX/innerWidth-.5)*2;py=(e.clientY/innerHeight-.5)*2},{passive:true});
+const cv=document.getElementById("sn"),cx=cv.getContext("2d");let w,h,ps=[],rt,af;
+function rs(){w=cv.width=innerWidth;h=cv.height=innerHeight}
+rs();addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(rs,120)},{passive:true});
+let n=w<600?32:48;
+for(let i=0;i<n;i++){let z=Math.random()*.55+.65;ps.push({x:Math.random()*w,y:Math.random()*h,z,r:(Math.random()*3.6+2.2)*z,v:(Math.random()*.5+.2)*z,d:(Math.random()*.4-.2)*z,a:Math.random()*6.28,s:Math.random()*.07+.025})}
+function st(x,y,r,al,lt){
+  cx.globalAlpha=al*.28;cx.fillStyle=lt?"#ea580c":"#a3e635";
+  cx.beginPath();cx.arc(x,y,r*1.4,0,6.283);cx.fill();
+  cx.globalAlpha=al;cx.fillStyle=lt?"#ea580c":"#ffffff";
+  cx.beginPath();cx.moveTo(x,y-r);cx.quadraticCurveTo(x,y,x+r,y);cx.quadraticCurveTo(x,y,x,y+r);cx.quadraticCurveTo(x,y,x-r,y);cx.quadraticCurveTo(x,y,x,y-r);cx.fill();
+}
+function lp(){
+  if(document.hidden||mq.matches)return;
+  cx.clearRect(0,0,w,h);let lt=!!document.body.dataset.t,span=h+20;
+  for(let p of ps){
+    p.a+=p.s;let tw=(Math.sin(p.a)+1)/2;
+    let yy=((p.y-sy*.28*p.z)%span+span)%span-10;
+    st(p.x-px*12*p.z,yy-py*8*p.z,p.r*(.5+tw*.75),(.18+tw*.82)*Math.min(1,p.z),lt);
+    p.y+=p.v;p.x+=p.d;
+    if(p.y>h+10){p.y=-10;p.x=Math.random()*w}
+    if(p.x>w+10)p.x=-10;if(p.x<-10)p.x=w+10;
+  }
+  af=requestAnimationFrame(lp);
+}
+if(!mq.matches)af=requestAnimationFrame(lp);
+document.addEventListener("visibilitychange",()=>{cancelAnimationFrame(af);if(!document.hidden&&!mq.matches)af=requestAnimationFrame(lp)});
+addEventListener("DOMContentLoaded",()=>{
+  const wl=document.getElementById("wl"),cr=document.getElementById("cr"),mt=document.querySelector(".mt"),mqEl=document.querySelector(".mq");
+  let mqTw,mqHover=0;
+  if(mt&&window.gsap&&!mq.matches){
+    mt.style.animation="none";
+    mqTw=gsap.to(mt,{xPercent:-50,duration:16,ease:"none",repeat:-1});
+    if(mqEl){
+      mqEl.addEventListener("mouseenter",()=>{mqHover=1;gsap.to(mqTw,{timeScale:.3,duration:.4})});
+      mqEl.addEventListener("mouseleave",()=>{mqHover=0;gsap.to(mqTw,{timeScale:1,duration:.5})});
+    }
+  }
+  if(cr&&matchMedia("(hover:hover)and(pointer:fine)").matches&&!mq.matches){
+    let hv=0,dn=0;
+    const sc=()=>window.gsap&&gsap.to(cr,{scale:dn?(hv?.82:.36):(hv?1:.45),duration:.3,ease:"back.out(1.8)"});
+    if(window.gsap){
+      gsap.set(cr,{xPercent:-50,yPercent:-50,scale:.45});
+      const cx2=gsap.quickTo(cr,"x",{duration:.22,ease:"power3.out"}),cy2=gsap.quickTo(cr,"y",{duration:.22,ease:"power3.out"});
+      addEventListener("mousemove",e=>{cr.style.opacity=1;cx2(e.clientX);cy2(e.clientY)},{passive:true});
+    }else{
+      addEventListener("mousemove",e=>{cr.style.opacity=1;cr.style.transform=`translate3d(${e.clientX-27}px,${e.clientY-27}px,0) scale(${hv?1:.45})`},{passive:true});
+    }
+    document.addEventListener("mouseleave",()=>{cr.style.opacity=0});
+    addEventListener("mousedown",()=>{dn=1;sc()});
+    addEventListener("mouseup",()=>{dn=0;sc()});
+    document.querySelectorAll(".bt,.tb,.kr,.mq,a,button").forEach(el=>{
+      el.addEventListener("mouseenter",()=>{hv=1;cr.classList.add("hv");sc()});
+      el.addEventListener("mouseleave",()=>{hv=0;cr.classList.remove("hv");sc()});
+    });
+  }
+  const pxItems=[...document.querySelectorAll(".x[data-sp]")].map(el=>({
+    el,sp:+el.dataset.sp,qy:window.gsap?gsap.quickTo(el,"y",{duration:.45,ease:"power2.out"}):null
+  }));
+  const applyParallax=(sc,lim,vel=0)=>{
+    sy=sc;
+    const norm=lim>0?(sc/lim-.5)*2:Math.max(-1,Math.min(1,vel*.08));
+    for(let it of pxItems){
+      const off=norm*it.sp;
+      if(it.qy)it.qy(off);else it.el.style.transform=`translate3d(0,${off}px,0)`;
+    }
+    if(mqTw&&!mqHover){
+      const boost=1+Math.min(2.6,Math.abs(vel)*.16);
+      gsap.to(mqTw,{timeScale:boost,duration:.25,overwrite:true,onComplete:()=>{if(!mqHover)gsap.to(mqTw,{timeScale:1,duration:.6})}});
+    }
+  };
+  if(window.Lenis&&!mq.matches){
+    const ln=new Lenis({duration:1.15,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
+    if(window.gsap){
+      const gp=gsap.quickTo(".g","rotateX",{duration:.45,ease:"power2.out"});
+      ln.on("scroll",e=>{gp(Math.max(-3,Math.min(3,-e.velocity*.12)));applyParallax(e.scroll,e.limit,e.velocity)});
+      gsap.ticker.add(t=>ln.raf(t*1000));gsap.ticker.lagSmoothing(0);
+    }else{
+      ln.on("scroll",e=>applyParallax(e.scroll,e.limit,e.velocity));
+      (function rf(t){ln.raf(t);requestAnimationFrame(rf)})(0);
+    }
+  }else if(!mq.matches){
+    addEventListener("scroll",()=>applyParallax(scrollY,document.documentElement.scrollHeight-innerHeight,0),{passive:true});
+  }
+  const showMain=()=>{
+    document.body.classList.remove("ld");
+    if(window.gsap&&!mq.matches){
+      gsap.from(".x,.mq",{y:22,z:-30,rotateX:10,opacity:0,duration:.75,stagger:.06,ease:"power3.out",clearProps:"opacity"});
+      gsap.from(".tg span",{scale:.85,opacity:0,duration:.45,stagger:.035,delay:.15,ease:"back.out(1.7)",clearProps:"transform,opacity"});
+      document.querySelectorAll(".x").forEach(el=>{
+        const rx=gsap.quickTo(el,"rotateX",{duration:.35,ease:"power3.out"}),ry=gsap.quickTo(el,"rotateY",{duration:.35,ease:"power3.out"});
+        const mv=e=>{const r=el.getBoundingClientRect();rx(-((e.clientY-r.top)/r.height-.5)*11);ry(((e.clientX-r.left)/r.width-.5)*13)};
+        const rs3=()=>gsap.to(el,{rotateX:0,rotateY:0,duration:.55,ease:"elastic.out(1,.5)"});
+        el.addEventListener("pointermove",mv,{passive:true});
+        el.addEventListener("pointerleave",rs3);
+        el.addEventListener("pointerup",rs3);
+        el.addEventListener("pointercancel",rs3);
+      });
+      if(matchMedia("(hover:hover)").matches){
+        document.querySelectorAll(".bt,.tb,.kr").forEach(el=>{
+          const qx=gsap.quickTo(el,"x",{duration:.35,ease:"power3.out"}),qy=gsap.quickTo(el,"y",{duration:.35,ease:"power3.out"});
+          el.addEventListener("mousemove",e=>{const r=el.getBoundingClientRect();qx((e.clientX-r.left-r.width/2)*.16);qy((e.clientY-r.top-r.height/2)*.22)});
+          el.addEventListener("mouseleave",()=>gsap.to(el,{x:0,y:0,duration:.45,ease:"elastic.out(1,.5)",clearProps:"transform"}));
+        });
+      }
+    }
+  };
+  if(wl&&window.gsap&&!mq.matches){
+    gsap.timeline({onComplete:()=>{wl.remove();setTimeout(showMain,260)}})
+      .from("#wl span,#wl strong",{y:20,z:-40,rotateX:-30,opacity:0,duration:.5,stagger:.08,ease:"power3.out"})
+      .to("#wl",{opacity:0,y:-18,duration:.42,ease:"power2.inOut"},"+=.45");
+  }else{
+    if(wl)setTimeout(()=>{wl.classList.add("hd");setTimeout(()=>wl.remove(),450)},750);
+    setTimeout(showMain,1050);
+  }
+});
 </script></body></html>
