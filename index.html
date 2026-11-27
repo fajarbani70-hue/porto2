@@ -115,9 +115,9 @@ b{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;mar
 .pv button{position:relative;overflow:hidden;border-radius:13px;padding:0;aspect-ratio:4/5;cursor:pointer;transform:translateZ(12px);display:block;text-align:left}
 .pv button img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;transition:transform .35s ease;pointer-events:none}
 .pv button img.no-img{display:none}
-.pv-ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:16px;text-align:center;color:var(--s);font-size:.76rem}
+.pv-ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:16px;text-align:center;color:var(--s);font-size:.75rem}
 .pv button.miss .pv-ph{display:flex}
-.pv-ph strong{color:var(--t);font-size:.84rem}
+.pv-ph strong{color:var(--t);font-size:.86rem}
 .pv button span.pv-lb{position:absolute;left:8px;right:8px;bottom:8px;font-size:.7rem;font-weight:700;color:#fafafa;background:rgba(9,9,11,.82);backdrop-filter:blur(6px);padding:5px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tb,.bt,.shb{position:relative;overflow:hidden;transform:translateZ(12px);transition:transform .28s cubic-bezier(.34,1.56,.64,1),border-color .25s,box-shadow .25s,background .25s,color .25s}
 .tb::after,.bt::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.32) 50%,transparent 75%);transform:translateX(-120%);transition:transform .55s ease;pointer-events:none}
@@ -138,8 +138,8 @@ footer{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:
 .mh{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
 .mh h4{font-size:1rem;font-weight:800;color:var(--t)}
 .mx{width:30px;height:30px;border-radius:99px;border:1px solid var(--l);background:var(--b);color:var(--t);font-size:1rem;cursor:pointer;display:grid;place-items:center}
-.lb-img{width:100%;max-height:54vh;border-radius:14px;overflow:hidden;border:1px solid var(--l);background:var(--b);margin-bottom:12px;display:grid;place-items:center}
-.lb-img img{width:100%;max-height:54vh;object-fit:contain;display:block;pointer-events:none}
+.lb-img{width:100%;max-height:56vh;border-radius:14px;overflow:hidden;border:1px solid var(--l);background:var(--b);margin-bottom:12px;display:grid;place-items:center}
+.lb-img img{width:100%;max-height:56vh;object-fit:contain;display:block;pointer-events:none}
 .lb-desc{font-size:.82rem;color:var(--s);line-height:1.5;margin-bottom:14px}
 .ch{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .ch button{border:1px solid var(--l);background:var(--b);color:var(--t);font-size:.75rem;font-weight:600;padding:6px 11px;border-radius:99px;cursor:pointer;transition:.2s}
@@ -168,7 +168,6 @@ footer{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:
 @media print{html,body{display:none!important;visibility:hidden!important}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}#sn,#wl,#cr,#vf,#flk,#grn{display:none!important}}
 </style></head><body class="ld"><div id="slk" aria-hidden="true"><strong>Konten Dilindungi</strong><span>Tutup Alat Pengembang (Inspect) untuk melanjutkan.</span></div><div id="grn" aria-hidden="true"></div><div id="spg" aria-hidden="true"></div><div id="sht" aria-hidden="true"></div><div id="vf" aria-hidden="true"><span class="vf-c tl"></span><span class="vf-c tr"></span><span class="vf-c bl"></span><span class="vf-c br"></span><div class="vf-bar tp"><span class="vf-rec"><i></i>35MM • TRI-X 400</span><span>[ 99% ] • AF-C</span></div><div class="vf-bar bt"><span id="vfe">1/250s • f/1.8 • ISO 400</span><span class="vf-st" id="vfs">FOKUS OTOMATIS</span></div></div><div id="flk" aria-hidden="true"></div><canvas id="sn"></canvas><div id="wl" aria-hidden="true"><span>FAJAR • ARSIP PERSONAL</span><strong>Selamat Datang<i>.</i></strong></div><div id="cr" aria-hidden="true"></div><div id="ts" role="status" aria-live="polite"><i></i><span></span></div>
-<input type="file" id="pkf" accept="image/*" hidden>
 <nav class="nv" aria-label="Navigasi Utama">
   <a href="#beranda" class="on">Beranda</a>
   <a href="#tentang">Tentang Saya</a>
@@ -317,7 +316,7 @@ footer{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:
   </section>
 </main>
 
-<div class="md" id="lb" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4 id="lbt">Pratinjau Karya</h4><button type="button" class="mx" onclick="closeMd('lb')" aria-label="Tutup">✕</button></div><div class="lb-img"><img id="lbi" alt="Pratinjau Karya"></div><p class="lb-desc" id="lbd"></p><div class="lk" style="grid-template-columns:1fr 1fr"><button type="button" class="bt" onclick="pickImg(curIdx)">Ganti Foto</button><a href="https://www.instagram.com/fajar_design1?lqvp=MWdhOXFncndjMWNuMg==" target="_blank" rel="noopener noreferrer" class="bt m">Instagram ↗</a></div></div></div>
+<div class="md" id="lb" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4 id="lbt">Pratinjau Karya</h4><button type="button" class="mx" onclick="closeMd('lb')" aria-label="Tutup">✕</button></div><div class="lb-img"><img id="lbi" alt="Pratinjau Karya"></div><p class="lb-desc" id="lbd"></p><a href="https://www.instagram.com/fajar_design1?lqvp=MWdhOXFncndjMWNuMg==" target="_blank" rel="noopener noreferrer" class="bt m" style="display:block">Lihat Lengkap di Instagram ↗</a></div></div>
 <div class="md" id="cb" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4>Rincian Kolaborasi WhatsApp</h4><button type="button" class="mx" onclick="closeMd('cb')" aria-label="Tutup">✕</button></div><b>Pilih Kebutuhan</b><div class="ch" id="sv"><button type="button" class="on">Desain Poster</button><button type="button">Identitas Merek &amp; Logo</button><button type="button">Fotografi</button><button type="button">Konten Media Sosial</button></div><b>Perkiraan Tenggat Waktu</b><div class="ch" id="dl"><button type="button" class="on">Santai (1–2 Minggu)</button><button type="button">Standar (3–5 Hari)</button><button type="button">Cepat (1–2 Hari)</button></div><b>Catatan Singkat (Opsional)</b><input class="in" id="nt" type="text" maxlength="140" pattern="[A-Za-z0-9\s.,!?()\-:/+]*" title="Gunakan huruf, angka, dan tanda baca standar" autocomplete="off" spellcheck="false" placeholder="Contoh: Poster acara kampus ukuran A3..."><button type="button" class="bt m" style="width:100%" onclick="sendWa()">Kirim Rincian ke WhatsApp ↗</button></div></div>
 <div class="md" id="qr" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4>Pindai / Bagikan Halaman</h4><button type="button" class="mx" onclick="closeMd('qr')" aria-label="Tutup">✕</button></div><div class="qr-box" id="qrb"></div><div class="qr-url" id="qru"></div><div class="lk" style="grid-template-columns:1fr 1fr"><button type="button" class="bt m" onclick="cpUrl()">Salin Tautan</button><button type="button" class="bt" onclick="natShare()">Bagikan Lewat HP</button></div></div></div>
 <div class="md" id="cv" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4>Ringkasan CV • Fajar</h4><button type="button" class="mx" onclick="closeMd('cv')" aria-label="Tutup">✕</button></div><div class="cv-list"><div class="cv-it"><strong>Profil Singkat</strong><span>Kreator Visual &amp; Fotografer — Medan, Sumatra Utara</span></div><div class="cv-it"><strong>Fokus Karya</strong><span>Desain Grafis, Tipografi, Identitas Visual, Fotografi &amp; Olah Warna</span></div><div class="cv-it"><strong>Perangkat Utama</strong><span>Adobe Photoshop &amp; Adobe Lightroom</span></div></div><button type="button" class="bt m" style="width:100%" onclick="dlCv()">Unduh Ringkasan CV (.txt)</button></div></div>
@@ -328,8 +327,9 @@ const CFG={
   waShow:"+62 383-238-5946"
 };
 const mq=matchMedia("(prefers-reduced-motion:reduce)"),isFine=matchMedia("(hover:hover)and(pointer:fine)").matches;
-let ok=0,px=0,py=0,tsTm,gx=0,gy=0,tgx=0,tgy=0,b0=null,g0=null,hasGyro=0,lastTouch=0,gyroBound=0,tPitch=0,sPitch=0,velBoost=0,dNorm=0,sNorm=0,lenisObj=null,vfOn=0,shotN=0,lockedEl=null,lastFocusSfx=0,lCx=99,lCy=99,lastAct=0,curIdx=0,pickIdx=0;
+let ok=0,px=0,py=0,tsTm,gx=0,gy=0,tgx=0,tgy=0,b0=null,g0=null,hasGyro=0,lastTouch=0,gyroBound=0,tPitch=0,sPitch=0,velBoost=0,dNorm=0,sNorm=0,lenisObj=null,vfOn=0,shotN=0,lockedEl=null,lastFocusSfx=0,lCx=99,lCy=99,lastAct=0;
 let acRgb=[250,250,250],acHex="#fafafa";
+try{localStorage.removeItem("fd_w_0");localStorage.removeItem("fd_w_1");localStorage.removeItem("fd_w_2")}catch(_){}
 const guardRate=(ms=2400)=>{
   const now=performance.now();
   if(now-lastAct<ms){toast("Tunggu sebentar sebelum mencoba lagi");return 0}
@@ -587,63 +587,37 @@ const WORKS=[
   {t:"Poster Supra MK5",c:"Desain Poster & Tipografi • 2026",d:"Eksplorasi poster otomotif Toyota Supra MK5 bernuansa gelap dengan tipografi custom dan komposisi visual dramatis.",base:"karya2"},
   {t:"Fotografi Produk",c:"Foto Komersial & Tata Cahaya • 2026",d:"Pemotretan produk komersial Maxicorn Nacho Cheese dengan penataan properti studio dan pencahayaan hangat yang menggugah.",base:"karya3"}
 ];
-function tryExt(img,base,i,idx=0){
-  const saved=localStorage.getItem("fd_w_"+i);
-  if(saved){img.src=saved;img.classList.remove("no-img");img.parentElement.classList.remove("miss");return}
-  const exts=[".jpg",".png",".jpeg",".webp",".JPG",".PNG"];
-  if(idx<exts.length){
-    img.onerror=()=>tryExt(img,base,i,idx+1);
+function tryExt(img,base,idx=0){
+  const paths=[
+    base+".jpg",base+".png",base+".jpeg",base+".webp",
+    base+".JPG",base+".PNG",base+".JPEG",
+    base[0].toUpperCase()+base.slice(1)+".jpg",
+    "img/"+base+".jpg","images/"+base+".jpg"
+  ];
+  if(idx<paths.length){
+    img.onerror=()=>tryExt(img,base,idx+1);
     img.onload=()=>{img.classList.remove("no-img");img.parentElement.classList.remove("miss")};
-    img.src=base+exts[idx];
+    img.src=paths[idx];
   }else{
     img.classList.add("no-img");
     img.parentElement.classList.add("miss");
   }
 }
-function pickImg(i){
-  pickIdx=i;
-  const inp=document.getElementById("pkf");
-  if(inp){inp.value="";inp.click()}
-}
-document.getElementById("pkf").addEventListener("change",e=>{
-  const f=e.target.files&&e.target.files[0];if(!f)return;
-  const rd=new FileReader();
-  rd.onload=ev=>{
-    const im=new Image();
-    im.onload=()=>{
-      const c=document.createElement("canvas"),sc=Math.min(1,900/Math.max(im.width,im.height));
-      c.width=Math.round(im.width*sc);c.height=Math.round(im.height*sc);
-      c.getContext("2d").drawImage(im,0,0,c.width,c.height);
-      const data=c.toDataURL("image/jpeg",.84);
-      try{localStorage.setItem("fd_w_"+pickIdx,data)}catch(_){}
-      renderPreviews();
-      if(document.getElementById("lb").classList.contains("op"))openWork(pickIdx);
-      toast("Foto "+WORKS[pickIdx].t+" terpasang!");
-    };
-    im.src=ev.target.result;
-  };
-  rd.readAsDataURL(f);
-});
 function renderPreviews(){
   const box=document.getElementById("pv");
   if(!box)return;
-  box.innerHTML=WORKS.map((w,i)=>`<button type="button" onclick="onCardClick(${i})" aria-label="${w.t}"><img data-b="${w.base}" data-i="${i}" alt="${w.t}"><div class="pv-ph"><strong>+ Pilih Foto dari Galeri</strong><span>${w.t} (${w.base}.jpg)</span></div><span class="pv-lb">${w.t}</span></button>`).join("");
-  box.querySelectorAll("img").forEach(im=>tryExt(im,im.dataset.b,+im.dataset.i,0));
-}
-function onCardClick(i){
-  const btn=document.querySelectorAll("#pv button")[i];
-  if(btn&&btn.classList.contains("miss"))pickImg(i);
-  else openWork(i);
+  box.innerHTML=WORKS.map((w,i)=>`<button type="button" onclick="openWork(${i})" aria-label="Pratinjau ${w.t}"><img data-b="${w.base}" alt="${w.t}"><div class="pv-ph"><strong>${w.t}</strong><span>${w.c}</span></div><span class="pv-lb">${w.t}</span></button>`).join("");
+  box.querySelectorAll("img").forEach(im=>tryExt(im,im.dataset.b,0));
 }
 function openWork(i){
-  curIdx=i;
   const w=WORKS[i];if(!w)return;
   document.getElementById("lbt").textContent=w.t;
   document.getElementById("lbd").textContent=w.c+" — "+w.d;
   const cur=document.querySelectorAll("#pv img")[i];
   const img=document.getElementById("lbi");
   img.alt=w.t;
-  if(cur&&cur.src)img.src=cur.src;
+  if(cur&&cur.currentSrc)img.src=cur.currentSrc;
+  else tryExt(img,w.base,0);
   openMd("lb");
 }
 function pickSvc(name){
