@@ -1,4 +1,4 @@
-="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://api.counterapi.dev; media-src 'none'; object-src 'none'; worker-src 'none'; base-uri 'self'; form-action 'self';">
 <meta name="referrer" content="no-referrer">
 <title>Fajar • Kreator Visual & Fotografer</title>
@@ -64,7 +64,6 @@ body.vf-on #flk{opacity:1}
 .wrap{position:relative;z-index:1;width:100%;max-width:880px;display:flex;flex-direction:column;gap:16px;perspective:950px;transform-style:preserve-3d;will-change:transform}
 .sec{scroll-margin-top:74px;display:grid;grid-template-columns:1fr;gap:12px;transform-style:preserve-3d}
 .shd{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:6px 4px 2px;border-bottom:1px solid var(--l)}
-.shd span{font-size:.68rem;font-weight:800;letter-spacing:2px;color:var(--s);text-transform:uppercase}
 .shd h2{font-size:clamp(1.1rem,2.4vw,1.3rem);font-weight:800;color:var(--t);transform:none}
 .g2{display:grid;grid-template-columns:1fr;gap:12px}
 .lk{display:grid;grid-template-columns:1fr 1fr;gap:8px;transform-style:preserve-3d}
@@ -253,7 +252,7 @@ footer{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:
   </section>
 
   <section id="proyek" class="sec">
-    <div class="shd"><h2>Proyek</h2><span>03 / Arsip Karya</span></div>
+    <div class="shd"><h2>Proyek</h2></div>
     <div class="x" data-sp="8">
       <b>Karya Pilihan (Ketuk untuk Pratinjau)</b>
       <div class="pv" id="pv"></div>
@@ -268,7 +267,7 @@ footer{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:
   </section>
 
   <section id="keahlian" class="sec">
-    <div class="shd"><h2>Keahlian</h2><span>04 / Bidang &amp; Perangkat</span></div>
+    <div class="shd"><h2>Keahlian</h2></div>
     <div class="g2">
       <div class="x" data-sp="10">
         <b>Bidang Keahlian</b>
@@ -293,7 +292,7 @@ footer{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:
   </section>
 
   <section id="kontak" class="sec">
-    <div class="shd"><h2>Kontak</h2><span>05 / Terhubung</span></div>
+    <div class="shd"><h2>Kontak</h2></div>
     <div class="x" data-sp="8">
       <b>Kontak &amp; Media Sosial</b>
       <div class="lk">
@@ -823,7 +822,7 @@ function lp(){
   af=requestAnimationFrame(lp);
 }
 if(!mq.matches)af=requestAnimationFrame(lp);
-document.addEventListener("visibilitychange",()=>{cancelAnimationFrame(af);if(!document.hidden&&!mq.matches){updWib();af=requestAnimationFrame(lp)}});
+document.addEventListener("visibilitychange",()=>{cancelAnimationFrame(af);if(!document.hidden&&!mq.matches){af=requestAnimationFrame(lp)}});
 const vn=document.getElementById("vn");
 let vTarget=0,vReady=0;
 const renderCount=val=>{
