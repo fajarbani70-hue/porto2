@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://api.counterapi.dev; media-src 'none'; object-src 'none'; worker-src 'none'; base-uri 'self'; form-action 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: blob:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src * data: blob:; font-src 'self' data:; connect-src 'self' https://api.counterapi.dev; media-src 'none'; object-src 'none'; worker-src 'none'; base-uri 'self'; form-action 'self';">
 <meta name="referrer" content="no-referrer">
 <title>Fajar • Kreator Visual & Fotografer</title>
 <meta name="description" content="Ruang personal, eksplorasi visual, dan fotografi oleh Fajar.">
@@ -112,9 +112,13 @@ b{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;mar
 .kr::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--g),transparent);transform:translateX(-100%);animation:sw 3s infinite}
 .kr h3,em{color:var(--t);font-style:normal}.kr h3{font-size:1rem}em{font-size:1.25rem;font-weight:700;padding-left:10px;animation:ar 1.5s infinite}
 .pv{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:12px;transform-style:preserve-3d}
-.pv button{position:relative;overflow:hidden;border-radius:13px;padding:0;aspect-ratio:4/3;cursor:pointer;transform:translateZ(12px);display:block;text-align:left}
-.pv button img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease;pointer-events:none}
-.pv button span{position:absolute;left:8px;right:8px;bottom:8px;font-size:.7rem;font-weight:700;color:#fafafa;background:rgba(9,9,11,.82);padding:5px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pv button{position:relative;overflow:hidden;border-radius:13px;padding:0;aspect-ratio:4/5;cursor:pointer;transform:translateZ(12px);display:block;text-align:left}
+.pv button img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;transition:transform .35s ease;pointer-events:none}
+.pv button img.no-img{display:none}
+.pv-ph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:16px;text-align:center;color:var(--s);font-size:.76rem}
+.pv button.miss .pv-ph{display:flex}
+.pv-ph strong{color:var(--t);font-size:.84rem}
+.pv button span.pv-lb{position:absolute;left:8px;right:8px;bottom:8px;font-size:.7rem;font-weight:700;color:#fafafa;background:rgba(9,9,11,.82);backdrop-filter:blur(6px);padding:5px 8px;border-radius:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tb,.bt,.shb{position:relative;overflow:hidden;transform:translateZ(12px);transition:transform .28s cubic-bezier(.34,1.56,.64,1),border-color .25s,box-shadow .25s,background .25s,color .25s}
 .tb::after,.bt::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.32) 50%,transparent 75%);transform:translateX(-120%);transition:transform .55s ease;pointer-events:none}
 .bt{text-align:center;padding:10px 14px;border-radius:12px;font-size:.83rem;font-weight:600;text-decoration:none;cursor:pointer}.m{background:var(--a);color:var(--at);border-color:var(--a);animation:gp 2.8s infinite}
@@ -134,8 +138,8 @@ footer{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:
 .mh{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
 .mh h4{font-size:1rem;font-weight:800;color:var(--t)}
 .mx{width:30px;height:30px;border-radius:99px;border:1px solid var(--l);background:var(--b);color:var(--t);font-size:1rem;cursor:pointer;display:grid;place-items:center}
-.lb-img{width:100%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:1px solid var(--l);background:var(--b);margin-bottom:12px}
-.lb-img img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.lb-img{width:100%;max-height:54vh;border-radius:14px;overflow:hidden;border:1px solid var(--l);background:var(--b);margin-bottom:12px;display:grid;place-items:center}
+.lb-img img{width:100%;max-height:54vh;object-fit:contain;display:block;pointer-events:none}
 .lb-desc{font-size:.82rem;color:var(--s);line-height:1.5;margin-bottom:14px}
 .ch{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .ch button{border:1px solid var(--l);background:var(--b);color:var(--t);font-size:.75rem;font-weight:600;padding:6px 11px;border-radius:99px;cursor:pointer;transition:.2s}
@@ -164,6 +168,7 @@ footer{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:
 @media print{html,body{display:none!important;visibility:hidden!important}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}#sn,#wl,#cr,#vf,#flk,#grn{display:none!important}}
 </style></head><body class="ld"><div id="slk" aria-hidden="true"><strong>Konten Dilindungi</strong><span>Tutup Alat Pengembang (Inspect) untuk melanjutkan.</span></div><div id="grn" aria-hidden="true"></div><div id="spg" aria-hidden="true"></div><div id="sht" aria-hidden="true"></div><div id="vf" aria-hidden="true"><span class="vf-c tl"></span><span class="vf-c tr"></span><span class="vf-c bl"></span><span class="vf-c br"></span><div class="vf-bar tp"><span class="vf-rec"><i></i>35MM • TRI-X 400</span><span>[ 99% ] • AF-C</span></div><div class="vf-bar bt"><span id="vfe">1/250s • f/1.8 • ISO 400</span><span class="vf-st" id="vfs">FOKUS OTOMATIS</span></div></div><div id="flk" aria-hidden="true"></div><canvas id="sn"></canvas><div id="wl" aria-hidden="true"><span>FAJAR • ARSIP PERSONAL</span><strong>Selamat Datang<i>.</i></strong></div><div id="cr" aria-hidden="true"></div><div id="ts" role="status" aria-live="polite"><i></i><span></span></div>
+<input type="file" id="pkf" accept="image/*" hidden>
 <nav class="nv" aria-label="Navigasi Utama">
   <a href="#beranda" class="on">Beranda</a>
   <a href="#tentang">Tentang Saya</a>
@@ -312,7 +317,7 @@ footer{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:
   </section>
 </main>
 
-<div class="md" id="lb" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4 id="lbt">Pratinjau Karya</h4><button type="button" class="mx" onclick="closeMd('lb')" aria-label="Tutup">✕</button></div><div class="lb-img"><img id="lbi" alt="Pratinjau Karya"></div><p class="lb-desc" id="lbd"></p><a href="https://www.instagram.com/fajar_design1?lqvp=MWdhOXFncndjMWNuMg==" target="_blank" rel="noopener noreferrer" class="bt m" style="display:block">Lihat Lengkap di Instagram ↗</a></div></div>
+<div class="md" id="lb" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4 id="lbt">Pratinjau Karya</h4><button type="button" class="mx" onclick="closeMd('lb')" aria-label="Tutup">✕</button></div><div class="lb-img"><img id="lbi" alt="Pratinjau Karya"></div><p class="lb-desc" id="lbd"></p><div class="lk" style="grid-template-columns:1fr 1fr"><button type="button" class="bt" onclick="pickImg(curIdx)">Ganti Foto</button><a href="https://www.instagram.com/fajar_design1?lqvp=MWdhOXFncndjMWNuMg==" target="_blank" rel="noopener noreferrer" class="bt m">Instagram ↗</a></div></div></div>
 <div class="md" id="cb" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4>Rincian Kolaborasi WhatsApp</h4><button type="button" class="mx" onclick="closeMd('cb')" aria-label="Tutup">✕</button></div><b>Pilih Kebutuhan</b><div class="ch" id="sv"><button type="button" class="on">Desain Poster</button><button type="button">Identitas Merek &amp; Logo</button><button type="button">Fotografi</button><button type="button">Konten Media Sosial</button></div><b>Perkiraan Tenggat Waktu</b><div class="ch" id="dl"><button type="button" class="on">Santai (1–2 Minggu)</button><button type="button">Standar (3–5 Hari)</button><button type="button">Cepat (1–2 Hari)</button></div><b>Catatan Singkat (Opsional)</b><input class="in" id="nt" type="text" maxlength="140" pattern="[A-Za-z0-9\s.,!?()\-:/+]*" title="Gunakan huruf, angka, dan tanda baca standar" autocomplete="off" spellcheck="false" placeholder="Contoh: Poster acara kampus ukuran A3..."><button type="button" class="bt m" style="width:100%" onclick="sendWa()">Kirim Rincian ke WhatsApp ↗</button></div></div>
 <div class="md" id="qr" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4>Pindai / Bagikan Halaman</h4><button type="button" class="mx" onclick="closeMd('qr')" aria-label="Tutup">✕</button></div><div class="qr-box" id="qrb"></div><div class="qr-url" id="qru"></div><div class="lk" style="grid-template-columns:1fr 1fr"><button type="button" class="bt m" onclick="cpUrl()">Salin Tautan</button><button type="button" class="bt" onclick="natShare()">Bagikan Lewat HP</button></div></div></div>
 <div class="md" id="cv" aria-hidden="true"><div class="mc" role="dialog" aria-modal="true"><div class="mh"><h4>Ringkasan CV • Fajar</h4><button type="button" class="mx" onclick="closeMd('cv')" aria-label="Tutup">✕</button></div><div class="cv-list"><div class="cv-it"><strong>Profil Singkat</strong><span>Kreator Visual &amp; Fotografer — Medan, Sumatra Utara</span></div><div class="cv-it"><strong>Fokus Karya</strong><span>Desain Grafis, Tipografi, Identitas Visual, Fotografi &amp; Olah Warna</span></div><div class="cv-it"><strong>Perangkat Utama</strong><span>Adobe Photoshop &amp; Adobe Lightroom</span></div></div><button type="button" class="bt m" style="width:100%" onclick="dlCv()">Unduh Ringkasan CV (.txt)</button></div></div>
@@ -323,7 +328,7 @@ const CFG={
   waShow:"+62 383-238-5946"
 };
 const mq=matchMedia("(prefers-reduced-motion:reduce)"),isFine=matchMedia("(hover:hover)and(pointer:fine)").matches;
-let ok=0,px=0,py=0,tsTm,gx=0,gy=0,tgx=0,tgy=0,b0=null,g0=null,hasGyro=0,lastTouch=0,gyroBound=0,tPitch=0,sPitch=0,velBoost=0,dNorm=0,sNorm=0,lenisObj=null,vfOn=0,shotN=0,lockedEl=null,lastFocusSfx=0,lCx=99,lCy=99,lastAct=0;
+let ok=0,px=0,py=0,tsTm,gx=0,gy=0,tgx=0,tgy=0,b0=null,g0=null,hasGyro=0,lastTouch=0,gyroBound=0,tPitch=0,sPitch=0,velBoost=0,dNorm=0,sNorm=0,lenisObj=null,vfOn=0,shotN=0,lockedEl=null,lastFocusSfx=0,lCx=99,lCy=99,lastAct=0,curIdx=0,pickIdx=0;
 let acRgb=[250,250,250],acHex="#fafafa";
 const guardRate=(ms=2400)=>{
   const now=performance.now();
@@ -521,7 +526,7 @@ function tm(){
   const lt=!document.body.dataset.t;
   document.body.dataset.t=lt?"p":"";
   localStorage.setItem("fd_th",lt?"p":"");
-  syncMono();renderPreviews();updExp();
+  syncMono();updExp();
   toast(lt?"Tema Putih aktif":"Tema Hitam aktif");
   if(window.gsap&&!mq.matches)gsap.fromTo(".pc",{scale:.85,rotateY:-180},{scale:1,rotateY:0,duration:.6,ease:"back.out(1.8)",clearProps:"transform"});
 }
@@ -578,26 +583,67 @@ function dlCv(){
   toast("Ringkasan CV berhasil diunduh");
 }
 const WORKS=[
-  {t:"Poster Visual",c:"Tipografi & Tata Letak • 2026",d:"Eksplorasi komposisi tipografi modern, hierarki visual tegas, dan kontras monokrom untuk poster acara & publikasi.",svg:(a,bg,fg)=>`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='${bg}'/><circle cx='300' cy='95' r='85' fill='${a}' fill-opacity='.14'/><circle cx='300' cy='95' r='44' fill='${a}'/><rect x='28' y='34' width='90' height='8' rx='4' fill='${a}'/><text x='28' y='132' font-family='system-ui,sans-serif' font-weight='900' font-size='54' letter-spacing='-2' fill='${fg}'>TYPE</text><text x='28' y='184' font-family='system-ui,sans-serif' font-weight='900' font-size='54' letter-spacing='-2' fill='${fg}' fill-opacity='.45'>GRID.</text><line x1='28' y1='212' x2='372' y2='212' stroke='${fg}' stroke-opacity='.2'/><text x='28' y='244' font-family='system-ui,sans-serif' font-weight='700' font-size='13' letter-spacing='3.5' fill='${fg}' fill-opacity='.65'>ARSIP 01 • SERI POSTER</text></svg>`},
-  {t:"Identitas Merek",c:"Identitas Visual • 2026",d:"Perancangan sistem identitas visual, monogram geometris, dan panduan aplikasi kontras hitam putih untuk kebutuhan merek modern.",svg:(a,bg,fg)=>`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='${bg}'/><g transform='translate(200,136)'><rect x='-56' y='-56' width='112' height='112' rx='26' fill='none' stroke='${a}' stroke-width='6'/><rect x='-34' y='-34' width='68' height='68' rx='16' fill='${a}'/><text x='0' y='9' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='26' fill='${bg}'>FD</text></g><text x='200' y='238' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='15' letter-spacing='4.5' fill='${fg}'>SISTEM VISUAL</text><text x='200' y='260' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='600' font-size='11' letter-spacing='2.5' fill='${fg}' fill-opacity='.55'>MONOGRAM &amp; PANDUAN</text></svg>`},
-  {t:"Olah Warna Foto",c:"Fotografi & Lightroom • 2026",d:"Kurasi fotografi potret monokrom dengan pendekatan pencahayaan dramatis serta kontras hitam putih sinematik.",svg:(a,bg,fg)=>`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='${bg}'/><circle cx='200' cy='140' r='78' fill='none' stroke='${fg}' stroke-opacity='.25' stroke-width='2' stroke-dasharray='6 6'/><circle cx='200' cy='140' r='50' fill='none' stroke='${a}' stroke-width='5'/><circle cx='200' cy='140' r='16' fill='${a}'/><path d='M36 48V32h16M364 48V32h-16M36 252v16h16M364 252v16h-16' stroke='${a}' stroke-width='3' fill='none'/><text x='200' y='258' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='700' font-size='12' letter-spacing='4' fill='${fg}' fill-opacity='.75'>35MM • 50MM F/1.8</text></svg>`}
+  {t:"Fotografi Potret",c:"Potret Kasual & Olah Warna • 2026",d:"Pemotretan potret outdoor dengan pencahayaan alami, pemisahan subjek yang lembut, dan penyesuaian warna natural.",base:"karya1"},
+  {t:"Poster Supra MK5",c:"Desain Poster & Tipografi • 2026",d:"Eksplorasi poster otomotif Toyota Supra MK5 bernuansa gelap dengan tipografi custom dan komposisi visual dramatis.",base:"karya2"},
+  {t:"Fotografi Produk",c:"Foto Komersial & Tata Cahaya • 2026",d:"Pemotretan produk komersial Maxicorn Nacho Cheese dengan penataan properti studio dan pencahayaan hangat yang menggugah.",base:"karya3"}
 ];
-function workUri(idx){
-  const lt=!!document.body.dataset.t,bg=lt?"#ffffff":"#141417",fg=lt?"#09090b":"#fafafa";
-  return "data:image/svg+xml;utf8,"+encodeURIComponent(WORKS[idx].svg(acHex,bg,fg));
+function tryExt(img,base,i,idx=0){
+  const saved=localStorage.getItem("fd_w_"+i);
+  if(saved){img.src=saved;img.classList.remove("no-img");img.parentElement.classList.remove("miss");return}
+  const exts=[".jpg",".png",".jpeg",".webp",".JPG",".PNG"];
+  if(idx<exts.length){
+    img.onerror=()=>tryExt(img,base,i,idx+1);
+    img.onload=()=>{img.classList.remove("no-img");img.parentElement.classList.remove("miss")};
+    img.src=base+exts[idx];
+  }else{
+    img.classList.add("no-img");
+    img.parentElement.classList.add("miss");
+  }
 }
+function pickImg(i){
+  pickIdx=i;
+  const inp=document.getElementById("pkf");
+  if(inp){inp.value="";inp.click()}
+}
+document.getElementById("pkf").addEventListener("change",e=>{
+  const f=e.target.files&&e.target.files[0];if(!f)return;
+  const rd=new FileReader();
+  rd.onload=ev=>{
+    const im=new Image();
+    im.onload=()=>{
+      const c=document.createElement("canvas"),sc=Math.min(1,900/Math.max(im.width,im.height));
+      c.width=Math.round(im.width*sc);c.height=Math.round(im.height*sc);
+      c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+      const data=c.toDataURL("image/jpeg",.84);
+      try{localStorage.setItem("fd_w_"+pickIdx,data)}catch(_){}
+      renderPreviews();
+      if(document.getElementById("lb").classList.contains("op"))openWork(pickIdx);
+      toast("Foto "+WORKS[pickIdx].t+" terpasang!");
+    };
+    im.src=ev.target.result;
+  };
+  rd.readAsDataURL(f);
+});
 function renderPreviews(){
   const box=document.getElementById("pv");
   if(!box)return;
-  box.innerHTML=WORKS.map((w,i)=>`<button type="button" onclick="openWork(${i})" aria-label="Pratinjau ${w.t}"><img src="${workUri(i)}" alt="${w.t}"><span>${w.t}</span></button>`).join("");
-  const lbi=document.getElementById("lbi");
-  if(lbi&&lbi.dataset.idx!==undefined)lbi.src=workUri(+lbi.dataset.idx);
+  box.innerHTML=WORKS.map((w,i)=>`<button type="button" onclick="onCardClick(${i})" aria-label="${w.t}"><img data-b="${w.base}" data-i="${i}" alt="${w.t}"><div class="pv-ph"><strong>+ Pilih Foto dari Galeri</strong><span>${w.t} (${w.base}.jpg)</span></div><span class="pv-lb">${w.t}</span></button>`).join("");
+  box.querySelectorAll("img").forEach(im=>tryExt(im,im.dataset.b,+im.dataset.i,0));
+}
+function onCardClick(i){
+  const btn=document.querySelectorAll("#pv button")[i];
+  if(btn&&btn.classList.contains("miss"))pickImg(i);
+  else openWork(i);
 }
 function openWork(i){
+  curIdx=i;
   const w=WORKS[i];if(!w)return;
   document.getElementById("lbt").textContent=w.t;
   document.getElementById("lbd").textContent=w.c+" — "+w.d;
-  const img=document.getElementById("lbi");img.dataset.idx=i;img.src=workUri(i);
+  const cur=document.querySelectorAll("#pv img")[i];
+  const img=document.getElementById("lbi");
+  img.alt=w.t;
+  if(cur&&cur.src)img.src=cur.src;
   openMd("lb");
 }
 function pickSvc(name){
